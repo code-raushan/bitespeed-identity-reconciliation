@@ -1,0 +1,35 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator kysely {
+  provider     = "prisma-kysely"
+  output       = "../src/db"
+  fileName     = "types.ts"
+  enumFileName = "enums.ts"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Contact {
+  id             Int        @id
+  phoneNumber    String?
+  email          String?
+  linkedId       Int?
+  linkPrecedence Precedence
+  createdAt      DateTime
+  updatedAt      DateTime
+  deletedAt      DateTime?
+  linked         Contact?   @relation("LinkedRelationship", fields: [linkedId], references: [id])
+  linkedContacts Contact[]  @relation("LinkedRelationship")
+}
+
+enum Precedence {
+  primary
+  secondary
+}
