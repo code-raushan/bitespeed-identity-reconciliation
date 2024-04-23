@@ -1,4 +1,5 @@
 import express, { Request, Response } from "express";
+import { identify } from "./controller/identify.controller";
 
 const app = express();
 
@@ -9,6 +10,8 @@ app.get("/", (req: Request, res: Response) => {
         message: "Server is running"
     });
 });
+
+app.post("/identify", identify);
 
 
 export default app;

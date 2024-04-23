@@ -7,15 +7,15 @@ export type Timestamp = ColumnType<Date, Date | string, Date | string>;
 import type { Precedence } from "./enums";
 
 export type Contact = {
-    id: number;
-    phoneNumber: string | null;
-    email: string | null;
-    linkedId: number | null;
-    linkPrecedence: Precedence;
-    createdAt: Timestamp;
-    updatedAt: Timestamp;
-    deletedAt: Timestamp | null;
+  id: Generated<number>;
+  phoneNumber: string | null;
+  email: string | null;
+  linkedId: number | null;
+  linkPrecedence: Precedence;
+  createdAt: Timestamp;
+  updatedAt: Timestamp;
+  deletedAt: Timestamp | null;
 };
 export type DB = {
-    Contact: Contact;
+  Contact: Contact;
 };
