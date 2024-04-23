@@ -1,8 +1,8 @@
 ## Identity Reconciliation
 
-```
+
 Endpoint: POST [/identify](https://bitespeed-identity-reconciliation-3.onrender.com/indentify)
-```
+
 
 ### Tech Stack
 
