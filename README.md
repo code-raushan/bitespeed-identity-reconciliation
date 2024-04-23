@@ -1,5 +1,6 @@
 ## Identity Reconciliation
 
+BASE URL: https://bitespeed-identity-reconciliation-3.onrender.com/
 
 Endpoint: POST [/identify](https://bitespeed-identity-reconciliation-3.onrender.com/indentify)
 
