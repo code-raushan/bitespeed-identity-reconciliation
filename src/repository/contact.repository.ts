@@ -29,15 +29,6 @@ export class ContactRepository {
                 .where("Contact.phoneNumber", "=", phoneNumber)
                 .execute();
         }
-
-        // return this._db
-        //     .selectFrom("Contact")
-        //     .selectAll()
-        //     .where((eb) => eb.or([
-        //         eb("Contact.email", "=", email),
-        //         eb("Contact.phoneNumber", "=", phoneNumber),
-        //     ]))
-        //     .execute();
     }
 
     async createPrimaryContact(params: { email?: string, phoneNumber?: string }) {
